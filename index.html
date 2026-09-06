@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="container">
+        <h1>🍳 Recipe Finder</h1>
+        <p>Discover delicious recipes by name or ingredient</p>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for chicken, pasta, curry..."
+                autocomplete="off"
+            >
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="search-options">
+            <button class="filter-btn active" data-type="name">
+                By Name
+            </button>
+
+            <button class="filter-btn" data-type="ingredient">
+                By Ingredient
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <div id="status" class="status"></div>
+
+    <section id="results" class="recipe-grid"></section>
+
+</main>
+
+<!-- Recipe Modal -->
+<div id="recipeModal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="close-btn">&times;</button>
+
+        <img id="modalImage" src="" alt="Recipe">
+
+        <div class="modal-body">
+
+            <h2 id="modalTitle"></h2>
+
+            <p>
+                <strong>Category:</strong>
+                <span id="modalCategory"></span>
+            </p>
+
+            <p>
+                <strong>Area:</strong>
+                <span id="modalArea"></span>
+            </p>
+
+            <h3>Ingredients</h3>
+
+            <ul id="ingredientsList"></ul>
+
+            <h3>Instructions</h3>
+
+            <p id="modalInstructions"></p>
+
+            <a
+                id="youtubeLink"
+                class="youtube-btn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ▶ Watch Recipe Video
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Recipe Finder App • Task 14</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

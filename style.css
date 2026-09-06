@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+
+/* Header */
+
+.hero {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Search */
+
+.search-box {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background: #0f172a;
+}
+
+.search-options {
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 9px 18px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.filter-btn.active {
+    background: white;
+    color: #ea580c;
+}
+
+/* Status */
+
+.status {
+    text-align: center;
+    min-height: 50px;
+    padding: 30px 0 10px;
+    font-size: 17px;
+    color: #64748b;
+}
+
+.status.error {
+    color: #dc2626;
+}
+
+/* Recipe Grid */
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    padding: 25px 0 50px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 18px;
+}
+
+.recipe-info h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.recipe-info p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: #f97316;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.view-btn:hover {
+    background: #ea580c;
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    padding: 30px 15px;
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.modal-content > img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.modal-body h3 {
+    margin: 25px 0 10px;
+}
+
+.modal-body p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.ingredients-list {
+    padding-left: 20px;
+}
+
+#ingredientsList {
+    padding-left: 25px;
+    line-height: 1.8;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.youtube-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.youtube-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #1e293b;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+}
+
